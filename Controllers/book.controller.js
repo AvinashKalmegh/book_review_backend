@@ -14,8 +14,7 @@ const getBookData = async(req,res)=>{
 
 const getSpecificBookData = async(req,res)=>{
     try {
-        let arr = [];
-        console.log(req.params);
+        // console.log(req.params);
         let data = await BookModel.findById(req.params.id);
         let review = await ReviewModel.find({bookId: req.params.id })
     

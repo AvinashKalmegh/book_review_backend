@@ -21,8 +21,7 @@ const postReviewData = async(req, res)=>{
 
 const deleteReviewData = async(req,res)=>{
     try {
-        let {_id} = req.params;
-        let data = await ReviewModel.findOneAndDelete({_id});
+        let data = await ReviewModel.findByIdAndDelete(req.params.id);
         res.send({result : "Data successfully deleted"});
     } catch (error) {
         res.send(error.message);
