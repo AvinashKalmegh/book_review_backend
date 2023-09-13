@@ -43,7 +43,7 @@ const signin = async(req,res)=>{
 
         if(correctPassword){
             const token = await jwt.sign({email:data.email, user_id:data._id},process.env.KEY);
-            res.send({result: "Login Successful", token});
+            res.send({result: token});
         }
         else{
             res.send({result: "No user found"})
