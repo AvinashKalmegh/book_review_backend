@@ -46,7 +46,7 @@ const signin = async(req,res)=>{
             res.send({result: "Signin successful", token});
         }
         else{
-            res.send({result: "No user found"})
+            res.send({result: "Please signup first"})
         }
     } catch (error) {
         res.send(error.message);
